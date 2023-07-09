@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3xr3dq54fn4h"]
+
+[ext_resource type="PackedScene" uid="uid://cs8trh02g0trb" path="res://Tank.tscn" id="1_x3h8e"]
+[ext_resource type="Texture2D" uid="uid://46y74ayrampx" path="res://assets/onlyObjects_retina_rotated.png" id="2_8plcy"]
+[ext_resource type="Script" path="res://Player.cs" id="2_jldaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55vu3"]
+size = Vector2(80, 84)
+
+[node name="Player" instance=ExtResource("1_x3h8e")]
+script = ExtResource("2_jldaa")
+Speed = 100
+RotationSpeed = 10.0
+
+[node name="Body" parent="." index="0"]
+texture = ExtResource("2_8plcy")
+region_enabled = true
+region_rect = Rect2(308, 263, 80, 82)
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(1.00128, 0.977272)
+shape = SubResource("RectangleShape2D_55vu3")
+
+[node name="Turret" parent="." index="2"]
+texture = ExtResource("2_8plcy")
+offset = Vector2(20, 0)
+region_enabled = true
+region_rect = Rect2(684, 14, 60, 24)
+
+[node name="Marker2D" parent="Turret" index="0"]
+position = Vector2(60, 0)
