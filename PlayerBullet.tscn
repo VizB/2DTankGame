@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2t0fpp52hm8v"]
+
+[ext_resource type="PackedScene" uid="uid://ble57y1dgrw1j" path="res://Bullet.tscn" id="1_exwj1"]
+[ext_resource type="Script" path="res://PlayerBullet.cs" id="2_a7o43"]
+[ext_resource type="Texture2D" uid="uid://46y74ayrampx" path="res://assets/onlyObjects_retina_rotated.png" id="3_q6bpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uuv0"]
+size = Vector2(30, 22)
+
+[node name="Area2D" instance=ExtResource("1_exwj1")]
+script = ExtResource("2_a7o43")
+Speed = 750
+Damage = 10
+Lifetime = 0.5
+Health = 100
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 3.14159
+texture = ExtResource("3_q6bpj")
+region_enabled = true
+region_rect = Rect2(389, 298, 31, 23)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_5uuv0")

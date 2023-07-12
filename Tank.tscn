@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://1oilwlbj7iy5"]
+
+[ext_resource type="Script" path="res://Tank.cs" id="1_7t353"]
+
+[node name="Tank" type="CharacterBody2D"]
+script = ExtResource("1_7t353")
+
+[node name="Body" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Turret" type="Sprite2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Turret"]
+
+[node name="GunTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="GunTimer" to="." method="OnGunTimerTimeout"]
